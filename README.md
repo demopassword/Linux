@@ -13,4 +13,6 @@ systemctl restart httpd
     ProxyPass / http://elb-loadbalancer-862954463.ap-northeast-2.elb.amazonaws.com:80/ disablereuse=on   #alb 도메인주소로 적절히 변경한다.
     ProxyPassReverse / http://elb-loadbalancer-862954463.ap-northeast-2.elb.amazonaws.com:80/
 </VirtualHost>
+
+systemctl restart httpd
 ```
