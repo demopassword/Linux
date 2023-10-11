@@ -19,7 +19,7 @@ nohup python3 app.py &
 cat << EOF > test.sh
 for i in {1..504}
 do
-    curl http://{instance_ip}/$i
+    curl --connect-timeout 1 -m 1 -# -o /dev/null -I -w %{http_code} -s -XGET http://127.0.0.1/$i
 done
 EOF
 chmod +x test.sh
