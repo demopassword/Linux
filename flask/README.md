@@ -1,4 +1,4 @@
-## flask application
+## flask test traffic
 ```bash
 #!/bin/bash
 echo 'password' | passwd --stdin ec2-user
