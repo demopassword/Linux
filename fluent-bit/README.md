@@ -33,10 +33,7 @@ curl https://raw.githubusercontent.com/fluent/fluent-bit/master/install.sh | sh
     Remove_key referer
     Remove_key agent
     Remove_key size
-[FILTER]
-    Name grep
-    Match *
-    Exclude path $/healthcheck$        # /healthcheck 경로 제외 /a/healthcheck는 허용됨
+
 [FILTER]
     Name aws
     Match *
@@ -124,6 +121,10 @@ nohup ./main > app.log &
     ec2_instance_id true
     az false
     tags_enabled true
+[FILTER]
+    Name grep
+    Match *
+    Exclude path $/healthcheck$        # /healthcheck 경로 제외 /a/healthcheck는 허용됨
 [FILTER]
     Name    modify
     Match   *
