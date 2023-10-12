@@ -34,6 +34,10 @@ curl https://raw.githubusercontent.com/fluent/fluent-bit/master/install.sh | sh
     Remove_key agent
     Remove_key size
 [FILTER]
+    Name grep
+    Match *
+    Exclude path $/healthcheck$        # /healthcheck 경로 제외 /a/healthcheck는 허용됨
+[FILTER]
     Name aws
     Match *
     imds_version v2
